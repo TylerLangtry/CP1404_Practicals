@@ -1,6 +1,6 @@
 """
 CP1404/CP5632 - Practical
-Temperature conversion
+Temperature conversion using functions
 """
 
 def main():
