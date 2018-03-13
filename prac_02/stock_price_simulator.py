@@ -29,6 +29,7 @@ MIN_PRICE = 1.0
 MAX_PRICE = 100.0
 INITIAL_PRICE = 10.0
 day = 0
+
 out_file = open('OUTPUT_FILE.txt', 'w')
 price = INITIAL_PRICE
 print("${:,.2f}".format(price))

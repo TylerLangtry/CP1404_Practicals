@@ -6,14 +6,13 @@ Answer the following questions:
 3. Could you change the code to avoid the possibility of a ZeroDivisionError?
 """
 
-
-numerator = int(input("Enter the numerator: "))
-denominator = int(input("Enter the denominator: "))
-
-while denominator == 0:
-    denominator = int(input("Please enter a denominator that isn't 0!: "))
-
 try:
+    numerator = int(input("Enter the numerator: "))
+    denominator = int(input("Enter the denominator: "))
+
+    while denominator == 0:
+        denominator = int(input("Please enter a denominator that isn't 0!: "))
+
     fraction = numerator / denominator
     print(fraction)
 except ValueError:
