@@ -1,4 +1,5 @@
 def main():
+    """Get and print select letters of a name"""
     name = get_name()
 
     print_name(name)
