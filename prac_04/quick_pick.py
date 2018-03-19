@@ -1,6 +1,8 @@
+from random import randint
+
 
 def main():
-
+    """Generate a lottery quick pick with select amount of lines"""
     lottery = []
 
     quick_picks = int(input("How many Quick Picks? "))
@@ -8,19 +10,19 @@ def main():
     lottery_generator(lottery, quick_picks)
 
 
+def duplicate_check(number, line):
+    if number in line:
+        return True
+    else:
+        return False
+
+
+def number_generator():
+    number = randint(1, 45)
+    return number
+
+
 def lottery_generator(lottery, quick_picks):
-    from random import randint
-
-    def duplicate_check(number, line):
-        if number in line:
-            return True
-        else:
-            return False
-
-    def number_generator():
-        number = randint(1, 45)
-        return number
-
     for i in range(quick_picks):
         line = [0, 0, 0, 0, 0, 0]
         for j in range(6):
