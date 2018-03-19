@@ -27,8 +27,8 @@ def lottery_generator(lottery, quick_picks):
             number = number_generator()
             check = duplicate_check(number, line)
             while check == True:
-                number_generator()
-                duplicate_check(number, line)
+                number = number_generator()
+                check = duplicate_check(number, line)
             line[j] = number
         lottery.append(line)
     for row in lottery:
