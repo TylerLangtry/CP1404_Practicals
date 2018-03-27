@@ -1,3 +1,4 @@
+
 sentence = input("Enter sentence: ").lower()
 sentence_dict = {}
 
@@ -12,5 +13,6 @@ for i in range(len(sentence_list)):
 
 print("Text: " + sentence)
 
-for i in sentence_dict:
-    print("{} : {}".format(i, sentence_dict[i]))
+for key, value in sorted(sentence_dict.items()):
+    print("{} : {}".format(key, sentence_dict[key]))
+    
