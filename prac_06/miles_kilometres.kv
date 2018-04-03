@@ -1,3 +1,23 @@
+<Label>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    color: 0, 0, 0, 1
+
+<Button>:
+    font_size: 56
+    background_normal: ''
+    background_down: 'atlas://data/images/defaulttheme/button'
+    canvas.after:
+        Color:
+            rgba: 0, 0, 0, 1
+        Line:
+            rectangle: self.x + 1, self.y + 1, self.width - 1, self.height - 1
+
+
 BoxLayout:
     orientation: 'vertical'
     BoxLayout:
@@ -18,5 +38,4 @@ BoxLayout:
                 on_press: app.handle_increment(-1)
     Label:
         id: output_label
-        color: (0, 1, 1, 1)
         font_size: 48

@@ -7,8 +7,8 @@ from kivy.properties import StringProperty
 class DynamicNamesApp(App):
     status_text = StringProperty()
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, **tyler):
+        super().__init__(**tyler)
         self.names = ['Bob', 'Cyan', 'Me']
 
     def build(self):
