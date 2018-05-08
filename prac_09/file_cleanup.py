@@ -58,20 +58,20 @@ def get_fixed_filename(filename):
     for position, char in enumerate(filename):
         if char.isalpha():
             if position > 0:
-                if char[-1].isalpha() and char[-1].isupper:
+                if new_name[-1].isalpha() and new_name[-1].isupper:
                     new_name += char
-                elif char[-1] == "_":
+                elif new_name[-1] == "_":
                     new_name += char.capitalize()
-                elif char[-1] == ".":
+                elif new_name[-1] == ".":
                     new_name += char
-                elif char[-1].isalpha() and char[-1].islower():
+                elif new_name[-1].isalpha() and new_name[-1].islower():
                     new_name += "_" + char
             else:
                 new_name += char.capitalize()
         else:
             new_name += char
 
-    print(new_name)
+
 
 
 
