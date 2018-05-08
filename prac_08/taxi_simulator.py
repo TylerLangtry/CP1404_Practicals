@@ -25,6 +25,7 @@ D - Drive"""
             bill = calculate_bill(bill, 0)
         elif choice.upper() == "D":
             distance = int(input("Drive how far?:"))
+            taxis[chosen_taxi].start_fare()
             taxis[chosen_taxi].drive(distance)
             cost = taxis[chosen_taxi].get_fare()
             print("Your {} trip cost you ${}".format(taxis[chosen_taxi].name, cost))
