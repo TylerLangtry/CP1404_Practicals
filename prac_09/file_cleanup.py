@@ -25,27 +25,6 @@ def main():
             new_name = get_fixed_filename(filename)
             print(new_name)
 
-            # NOTE: These options won't just work...
-            # they show you ways of renaming and moving files,
-            # but you need to have valid filenames. You can't make a file with
-            # a blank name, and on Windows you can't have files with the same
-            # characters but different case (e.g. a.TXT and A.txt)
-            # So, you need to get valid filenames before you can use these.
-
-            # Option 1: rename file to new name - in place
-            # os.rename(filename, new_name)
-
-            # Option 2: move file to new place, with new name
-            # shutil.move(filename, 'temp/' + new_name)
-
-            # Processing subdirectories using os.walk()
-
-            # os.chdir('..')  # .. means "up" one directory
-            # for dir_name, subdir_list, file_list in os.walk('.'):
-            #     print("In", dir_name)
-            #     print("\tcontains subdirectories:", subdir_list)
-            #     print("\tand files:", file_list)
-
 
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
@@ -58,32 +37,24 @@ def get_fixed_filename(filename):
     for position, char in enumerate(filename):
         if char.isalpha():
             if position > 0:
-                if new_name[-1].isalpha() and new_name[-1].isupper:
+                if char.isupper() and new_name[-1].isalpha() and new_name[-1].islower():
+                    new_name += "_" + char
+                elif char.isupper() and new_name[-1].isalpha() and new_name[-1].isupper():
+                    new_name += "_" + char
+                elif new_name[-1].isalpha() and new_name[-1].isupper and char.islower():
                     new_name += char
                 elif new_name[-1] == "_":
                     new_name += char.capitalize()
                 elif new_name[-1] == ".":
                     new_name += char
+                elif new_name[-1] == "(" or ")":
+                    new_name += char.capitalize()
                 elif new_name[-1].isalpha() and new_name[-1].islower():
                     new_name += "_" + char
             else:
                 new_name += char.capitalize()
         else:
             new_name += char
-
-
-
-
-
-        #if char.isupper():
-         #   type = 1
-        #elif char.islower():
-         #   type = 2
-        #elif char == "_":
-         #   type = 3
-        #elif char == ".":
-         #   type = 4
-
 
 
 
