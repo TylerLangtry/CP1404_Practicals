@@ -56,8 +56,7 @@ def get_fixed_filename(filename):
         else:
             new_name += char
 
-
-
+    # os.rename(filename, new_name)
     return new_name
 
 
